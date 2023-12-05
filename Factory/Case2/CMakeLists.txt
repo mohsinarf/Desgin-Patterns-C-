@@ -6,10 +6,7 @@ project(MyProject)  # Name of your project
 set(CMAKE_CXX_STANDARD 20)
 
 # Add the executable target
-add_executable(DecoratorPattern main.cpp)
-
-# Set the C++ standard (optional)
-set(CMAKE_CXX_STANDARD 11) # Change as needed
+add_executable(FactoryPatternCase2 main.cpp)
 
 # Set the compilation flags (optional)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra") # Uncomment and customize as needed

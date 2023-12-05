@@ -32,4 +32,5 @@
 *.app
 
 # Build directories
-Decorator/build/
+
+*build/
