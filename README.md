@@ -1,40 +1,22 @@
-# Design Patterns with C++
-1. **Singleton Pattern**:
-   - Probability: High
-   - Explanation: It's a fundamental pattern used to ensure a class has only one instance and provides a global point of access to it.
-
-2. **Factory Method Pattern**:
-   - Probability: High
-   - Explanation: This pattern provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
-
-3. **Builder Pattern**:
-   - Probability: Medium
-   - Explanation: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
-
-4. **Observer Pattern**:
-   - Probability: Medium
-   - Explanation: Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
-
-5. **Decorator Pattern**:
-   - Probability: Medium
-   - Explanation: Allows behavior to be added to individual objects dynamically, without affecting the behavior of other objects from the same class.
-
-6. **Adapter Pattern**:
-   - Probability: Medium
-   - Explanation: Allows incompatible interfaces to work together by providing a wrapper with a compatible interface.
-
-7. **Strategy Pattern**:
-   - Probability: Medium
-   - Explanation: Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
-
-8. **Abstract Factory Pattern**:
-   - Probability: Low to Medium
-   - Explanation: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
-
-9. **Facade Pattern**:
-   - Probability: Low to Medium
-   - Explanation: Provides a unified interface to a set of interfaces in a subsystem, making it easier to use.
-
-10. **Composite Pattern**:
-    - Probability: Low
-    - Explanation: Composes objects into tree structures to represent part-whole hierarchies.
+| #  | Pattern Name                | Intent                                                                                   | Pattern Type      | Structure                      | Example                          | Strengths                                                                                                    | Weaknesses                                                                                                   |
+|----|-----------------------------|------------------------------------------------------------------------------------------|--------------------|---------------------------------|----------------------------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| 1  | Singleton Pattern           | Ensure a class has only one instance and provide a global point of access to it.        | Creational         | Single object instance          | Logging systems                  | - Controlled access to instance<br>- Lazy initialization<br>- Global access point                            | - Violates single responsibility principle<br>- Difficult to unit test<br>- Can introduce global state     |
+| 2  | Factory Method Pattern      | Define an interface for creating an object, but allow subclasses to alter the type of objects that will be created. | Creational         | Object creation via interfaces | Document creation in a framework | - Encapsulates object creation<br>- Follows open/closed principle<br>- Subclasses can reuse code              | - Increased complexity<br>- May require many subclasses                                                       |
+| 3  | Builder Pattern             | Separate the construction of a complex object from its representation, allowing the same construction process to create different representations. | Creational         | Construct complex objects step-by-step | Building complex objects         | - Encapsulates complex object creation<br>- Allows varying representations<br>- Follows single responsibility principle | - Increased code complexity<br>- May involve many builder classes                                            |
+| 4  | Observer Pattern            | Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. | Behavioral         | Subject-Observer relationship   | Event handling systems           | - Loosely coupled objects<br>- Open for extension<br>- Supports broadcast communication                       | - Unexpected updates<br>- Memory leaks if not handled properly<br>- Complexity with multiple observers      |
+| 5  | Decorator Pattern           | Attach additional responsibilities to an object dynamically, providing a flexible alternative to subclassing for extending functionality. | Structural         | Object wrapping for added responsibilities | I/O streams in Java              | - More flexible than inheritance<br>- Follows single responsibility principle<br>- Open for extension        | - Many small objects<br>- Complexity with nested decorators                                                 |
+| 6  | Adapter Pattern             | Convert the interface of a class into another interface that a client expects.          | Structural         | Interface conversion            | Legacy code integration          | - Allows reuse of existing classes<br>- Follows single responsibility principle<br>- Open for extension       | - Increased complexity<br>- Potential for code duplication                                                    |
+| 7  | Strategy Pattern            | Define a family of algorithms, encapsulate each one, and make them interchangeable.    | Behavioral         | Algorithm encapsulation         | Sorting algorithms               | - Encapsulates algorithm variation<br>- Follows open/closed principle<br>- Promotes composition over inheritance | - Increased number of objects<br>- Client needs to be aware of strategy change                               |
+| 8  | Abstract Factory Pattern    | Provide an interface for creating families of related or dependent objects without specifying their concrete classes. | Creational         | Factory of factories            | GUI libraries                    | - Decouples concrete classes<br>- Follows open/closed principle<br>- Promotes consistency                        | - Increased complexity<br>- Need to create many interfaces and classes                                      |
+| 9  | Facade Pattern              | Provide a unified interface to a set of interfaces in a subsystem, making it easier to use. | Structural         | Unified interface               | High-level APIs                  | - Simplifies subsystem usage<br>- Decouples client from subsystem<br>- Follows least knowledge principle       | - May become a God object with too many responsibilities<br>- Increased complexity for subsystem changes   |
+| 10 | Composite Pattern           | Compose objects into tree structures to represent part-whole hierarchies.                | Structural         | Tree-like object composition    | GUI components                   | - Represents hierarchical structures effectively<br>- Follows single responsibility principle<br>- Open for extension | - Can overly simplify the object model<br>- Potential for general performance issues                       |
+| 11 | Prototype Pattern           | Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype. | Creational         | Object cloning                 | Cloning objects                  | - Avoids costly object creation<br>- Hides complexities of object creation<br>- Follows prototype principle   | - Shallow vs. deep copy issues<br>- Circular references can cause problems                                 |
+| 12 | Bridge Pattern              | Decouple an abstraction from its implementation so that the two can vary independently. | Structural         | Abstraction-Implementation decoupling | Database abstraction layers      | - Decouples abstraction and implementation<br>- Follows open/closed principle<br>- Promotes extensibility     | - Increased complexity<br>- Requires understanding of both abstractions and implementations                 |
+| 13 | Chain of Responsibility Pattern | Allow multiple objects to handle a request without specifying the handler.            | Behavioral         | Request processing chain        | Event propagation                | - Decouples sender and receiver<br>- Follows single responsibility principle<br>- Open for extension          | - Can cause performance issues with long chains<br>- Need proper chain management                            |
+| 14 | Flyweight Pattern           | Use sharing to support a large number of fine-grained objects efficiently.              | Structural         | Object sharing                 | Text editors                     | - Saves memory by sharing objects<br>- Follows single responsibility principle<br>- Improves performance      | - Increased complexity<br>- Need to separate intrinsic and extrinsic state                                  |
+| 15 | Memento Pattern             | Capture and externalize an object's internal state so that the object can be restored to this state later. | Behavioral         | Object state capture/restore    | Undo mechanisms                  | - Preserves object internal state<br>- Follows single responsibility principle<br>- Simplifies state restoration | - Increased complexity<br>- Need to track and manage memento objects                                       |
+| 16 | Command Pattern             | Encapsulate a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations. | Behavioral         | Request encapsulation           | GUI buttons                      | - Decouples sender and receiver<br>- Supports undo/redo operations<br>- Follows single responsibility principle | - Increased complexity<br>- Need to create many command objects                                            |
+| 17 | Proxy Pattern               | Provide a surrogate or placeholder for another object to control access to it.          | Structural         | Object access control           | Remote proxies                   | - Provides a surrogate object<br>- Follows single responsibility principle<br>- Supports lazy initialization   | - Increased complexity<br>- Need to create proxy and real object                                            |
+| 18 | State Pattern               | Allow an object to alter its behavior when its internal state changes.                   | Behavioral         | State-driven behavior           | Vending machines                 | - Encapsulates state-based behavior<br>- Follows single responsibility principle<br>- Open for extension       | - Increased complexity<br>- Need to create many state objects                                               |
+| 19 | Template Method Pattern     | Define the skeleton of an algorithm in the superclass but allow subclasses to override specific steps. | Behavioral         | Algorithm skeleton with overridable steps | Sorting algorithms               | - Reuses common code in superclass<br>- Follows open/closed principle<br>- Promotes code reuse                  | - Increased complexity<br>- Restricted control over some parts of the algorithm                            |
+| 20 | Visitor Pattern             | Represent an operation to be performed on the elements of an object structure without changing the classes on which it operates. | Behavioral         | Operation on object structure   | Compiler design                  | - Separates operations from object structure<br>- Follows single responsibility principle<br>- Supports open for extension | - Increased complexity<br>- Need to update visitor for each new element type                               |
