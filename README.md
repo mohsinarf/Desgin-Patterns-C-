@@ -1,3 +1,6 @@
+# Modern C++ Design patterns
+This repository contains implementations of various design patterns in C++.
+
 | # | Pattern Name                | Intent                                                                                   | Structure                      | Example                          |
 |---|-----------------------------|------------------------------------------------------------------------------------------|--------------------------------|----------------------------------|
 | 1 | Singleton Pattern           | Ensure a class has only one instance and provide a global point of access to it.          | Creational Pattern             | Logging systems                  |
